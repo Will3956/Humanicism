@@ -27,6 +27,9 @@ body {
   height: 100%;
   left: 0;
   top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .sidebar a {
@@ -50,6 +53,7 @@ body {
   opacity: 0;
   transform: translateY(20px);
   animation: fadeIn 1s forwards;
+  text-align: center;
 }
 
 @keyframes fadeIn {
@@ -57,6 +61,20 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Links */
+.content a {
+  display: block;
+  color: #00e6ff;
+  margin: 10px 0;
+  font-size: 1.2em;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.content a:hover {
+  text-decoration: underline;
 }
 
 /* Futuristic buttons for links */
@@ -132,7 +150,6 @@ form button:hover {
 .content h1 {
   font-size: 2.5em;
   margin-bottom: 20px;
-  text-align: center;
   color: #00e6ff;
   text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
 }
@@ -141,16 +158,29 @@ form button:hover {
   line-height: 1.8;
   font-size: 1.1em;
   margin-bottom: 20px;
-  text-align: justify;
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
+  text-align: center; /* All text centered */
 }
 
 .content strong {
   color: #00ffb0;
 }
 
+.content ul {
+  padding-left: 0;
+  list-style: none;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
 .content ul li {
   margin-bottom: 15px;
+}
+
+.content ul li::before {
+  content: '•';
+  color: #00e6ff;
+  margin-right: 8px;
 }
