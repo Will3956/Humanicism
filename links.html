@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Humanicism - Community Links</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Favicon -->
-  <link rel="icon" href="logo.png?v=1" type="image/png">
+  <link rel="icon" href="logo.png" type="image/png">
   <style>
     /* Link buttons */
     .link-button {
@@ -14,23 +14,48 @@
       max-width: 400px;
       margin: 20px auto;
       padding: 20px;
-      background: #00e6ff;
-      color: #001a66; /* dark text, visible on light button background */
+      background: #0044cc; /* dark blue */
+      color: #ffffff; /* white text visible by default */
       text-decoration: none;
       font-size: 1.3em;
       font-weight: bold;
       text-align: center;
       border-radius: 25px;
-      box-shadow: 0 0 15px rgba(0, 230, 255, 0.6);
+      box-shadow: 0 0 15px rgba(0, 70, 204, 0.6);
       transition: all 0.3s ease;
     }
 
-    /* Hover effect */
     .link-button:hover {
-      background: #001a66;
-      color: #ffffff; /* text turns white on hover */
-      box-shadow: 0 0 25px rgba(0, 230, 255, 0.9);
+      background: #001a66; /* darker blue on hover */
+      color: #ffffff;
+      box-shadow: 0 0 25px rgba(0, 70, 204, 0.9);
       transform: scale(1.05);
+    }
+
+    /* Center content */
+    .content {
+      text-align: center;
+      margin-left: 220px;
+      padding: 40px;
+    }
+
+    .content img {
+      width: 180px;
+      height: auto;
+      border-radius: 50%;
+      border: 3px solid #00e6ff;
+    }
+
+    .content h1 {
+      color: #00e6ff;
+      font-size: 2.5em;
+      margin: 20px 0;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+    }
+
+    .content p {
+      color: white;
+      font-size: 1.1em;
     }
   </style>
 </head>
@@ -43,7 +68,7 @@
   </div>
 
   <div class="content">
-    <img src="logo.png" alt="Humanicism Logo" style="width:180px;height:auto;border-radius:50%;border:3px solid #00e6ff;">
+    <img src="logo.png" alt="Humanicism Logo">
     <h1>Community Links</h1>
 
     <a class="link-button" href="https://discord.gg/7upBh8pvJk" target="_blank">Join our Discord</a>
