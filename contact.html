@@ -5,12 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Humanicism - Contact Us</title>
   <link rel="stylesheet" href="style.css">
-  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-  <script type="text/javascript">
-    (function(){
-      emailjs.init("XOBqjVCEBe63jhrnS"); // Your EmailJS user ID
-    })();
-  </script>
+  <link rel="icon" href="logo.png" type="image/png">
 </head>
 <body>
   <div class="sidebar">
@@ -25,9 +20,9 @@
     <h1>Contact Us</h1>
     <form id="contact-form">
       <label>Your Name:</label>
-      <input type="text" name="from_name" placeholder="Your Name" required>
+      <input type="text" name="name" placeholder="Your Name" required>
       <label>Your Email:</label>
-      <input type="email" name="from_email" placeholder="Your Email" required>
+      <input type="email" name="email" placeholder="Your Email" required>
       <label>Message:</label>
       <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
       <button type="submit">Send Message</button>
@@ -35,20 +30,27 @@
     <div id="status"></div>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>
+    emailjs.init('XOBqjVCEBe63jhrnS');
+
     const form = document.getElementById('contact-form');
     const statusDiv = document.getElementById('status');
 
-    form.addEventListener('submit', function(e) {
+    form.addEventListener('submit', e => {
       e.preventDefault();
-      statusDiv.innerHTML = "Sending...";
+      const templateParams = {
+        from_name: form.name.value,
+        from_email: form.email.value,
+        message: form.message.value
+      };
 
-      emailjs.sendForm('service_t41dfh1', 'template_ut9e3pv', this)
+      emailjs.send('service_t41dfh1', 'template_ut9e3pv', templateParams)
         .then(() => {
-          statusDiv.innerHTML = '<p style="color: #00ffb0;">Message sent successfully!</p>';
+          statusDiv.innerHTML = '<p style="color:#00ffb0;">Message sent successfully!</p>';
           form.reset();
         }, (err) => {
-          statusDiv.innerHTML = '<p style="color: red;">Error sending message: ' + JSON.stringify(err) + '</p>';
+          statusDiv.innerHTML = '<p style="color:#ff5555;">Error sending message: '+err.text+'</p>';
         });
     });
   </script>
