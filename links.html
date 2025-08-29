@@ -2,10 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Humanicism - Community Links</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="logo.png" type="image/png">
 </head>
 <body>
   <div class="sidebar">
@@ -31,9 +29,29 @@
   </div>
 
   <style>
-    /* Override link-button text color to white by default */
+    /* Link buttons */
     .link-button {
-      color: white !important;
+      display: block;
+      width: 100%;
+      max-width: 400px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #00e6ff;
+      color: #fff; /* text always white */
+      text-decoration: none;
+      font-size: 1.3em;
+      font-weight: bold;
+      text-align: center;
+      border-radius: 25px;
+      box-shadow: 0 0 15px rgba(0, 230, 255, 0.6);
+      transition: all 0.3s ease;
+    }
+
+    .link-button:hover {
+      background: #001a66;
+      color: #fff; /* keep text white on hover */
+      box-shadow: 0 0 25px rgba(0, 230, 255, 0.9);
+      transform: scale(1.05);
     }
   </style>
 </body>
